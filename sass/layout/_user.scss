@@ -17,6 +17,7 @@
     align-items: center;
     text-decoration: none;
     padding-bottom: 32px;
+    cursor: pointer;
 
     img {
       padding-right: 23px;
@@ -150,30 +151,195 @@
 
     &-main {
       display: flex;
+      padding-bottom: 45px;
 
       .content-paymentDate {
         display: flex;
         flex-direction: column;
         gap: 32px 0;
+        padding-right: 100px;
+
+        .invoice-d {
+          display: flex;
+          flex-direction: column;
+          gap: 12px 0;
+
+          .title-d {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 15px;
+            letter-spacing: -0.25px;
+            color: var(--g);
+          }
+          .date-d {
+            font-weight: bold;
+            font-size: 15px;
+            line-height: 20px;
+            letter-spacing: -0.31px;
+            color: var(--h);
+          }
+        }
       }
-      .invoice-d {
+
+      .content-billTo {
         display: flex;
         flex-direction: column;
-        gap: 12px 0;
+        padding-right: 110px;
 
-        .title-d {
+        h3 {
           font-weight: 500;
           font-size: 12px;
           line-height: 15px;
           letter-spacing: -0.25px;
           color: var(--g);
+          padding-bottom: 12px;
         }
-        .date-d {
+
+        span {
           font-weight: bold;
           font-size: 15px;
           line-height: 20px;
           letter-spacing: -0.31px;
           color: var(--h);
+          padding-bottom: 8px;
+        }
+
+        ul {
+          display: flex;
+          flex-direction: column;
+
+          li {
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 18px;
+            letter-spacing: 0.22px;
+            color: var(--g);
+          }
+        }
+      }
+
+      .content-sentTo {
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 15px;
+          letter-spacing: -0.25px;
+          color: var(--g);
+          padding-bottom: 12px;
+        }
+
+        span {
+          font-weight: bold;
+          font-size: 15px;
+          line-height: 20px;
+          letter-spacing: -0.31px;
+          color: var(--h);
+        }
+      }
+    }
+
+    &-product {
+      .product-list {
+        display: flex;
+        background: var(--n);
+        border-radius: 8px 8px 0px 0px;
+        padding: 32px 32px 40px 32px;
+        h3 {
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 15px;
+          letter-spacing: -0.25px;
+          color: var(--g);
+          padding-bottom: 32px;
+        }
+
+        li {
+          font-weight: bold;
+          font-size: 12px;
+          line-height: 15px;
+          letter-spacing: -0.25px;
+        }
+
+        .item-name ul,
+        .item-qty ul,
+        .item-price ul,
+        .item-total ul {
+          display: flex;
+          flex-direction: column;
+          gap: 32px 0;
+        }
+
+        .item-name {
+          width: 100%;
+          max-width: 222px;
+
+          li {
+            color: var(--h);
+          }
+        }
+
+        .item-qty {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          height: 100%;
+          padding-right: 65px;
+
+          li {
+            color: var(--g);
+          }
+        }
+        .item-price {
+          padding-right: 108px;
+
+          li {
+            color: var(--g);
+          }
+        }
+
+        .item-price,
+        .item-total {
+          display: flex;
+          align-items: flex-end;
+          flex-direction: column;
+
+          ul {
+            align-items: flex-end;
+          }
+        }
+
+        .item-total {
+          li {
+            color: var(--h);
+          }
+        }
+      }
+
+      .product-total {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+        color: var(--m);
+        background: var(--o);
+        border-radius: 0px 0px 8px 8px;
+        padding: 0 32px;
+
+        h4 {
+          font-weight: 500;
+          font-size: 11px;
+          line-height: 18px;
+          letter-spacing: -0.229167px;
+        }
+
+        span {
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 32px;
+          letter-spacing: -0.5px;
         }
       }
     }

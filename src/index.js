@@ -1,5 +1,3 @@
-"use strict";
-
 const response = await fetch(`/data/data.json`);
 const data = await response.json();
 
@@ -11,6 +9,12 @@ class User {
     this.userList = document.querySelector(".content-user");
     this.renderUsers();
     this.createDomElement();
+    this.filteringIsotope();
+
+    // event listener
+    document
+      .querySelector(".mainC-header__toggle-filter")
+      .addEventListener("click", this.toggleFilterContent.bind());
   }
 
   //////////////////////
@@ -47,6 +51,41 @@ class User {
     }
   }
 
+  toggleFilterContent() {
+    const x = document.querySelector(".toggle-radio");
+    if (x.style.display === "none") {
+      x.style.display = "flex";
+      document.querySelector(".toggle-arrow").style.rotate = "180deg";
+    } else {
+      x.style.display = "none";
+      document.querySelector(".toggle-arrow").style.rotate = "0deg";
+    }
+  }
+
+  filteringIsotope() {
+    const $grid = $(".content-list").isotope({
+      itemSelector: ".element-item",
+      layoutMode: "vertical",
+    });
+
+    console.log($grid.itemSelector);
+
+    const $checkboxes = $(".toggle-radio input");
+
+    $checkboxes.change(function () {
+      const inclusives = [];
+      $checkboxes.each(function (i, elem) {
+        if (elem.checked) {
+          inclusives.push(elem.value);
+        }
+      });
+
+      // combine inclusive filters
+      const filterValue = inclusives.length ? inclusives.join(", ") : "*";
+      $grid.isotope({ filter: filterValue });
+    });
+  }
+
   /////////////////////
   // Render function //
   ////////////////////
@@ -62,10 +101,11 @@ class User {
     } else if (location.search.substring(4) == this.idItem) {
       users.forEach((item) => {
         this.createDomElement(item);
-        this.statusGestionUsers(item, this.status);
+        //this.statusGestionUsers(item, this.status);
       });
     } else {
       this.createNothingElt();
+      this.filteringIsotope();
     }
   }
 
@@ -86,7 +126,7 @@ class User {
     this.li = document.createElement("a");
     this.li.setAttribute("href", "invoice.html?id=" + item.id);
     this.li.setAttribute("data-id", id);
-    this.li.classList.add("content-list__item");
+    this.li.classList.add("content-list__item", "element-item");
 
     this.li.innerHTML = `
     <span id="data-Ref"><span class="hashtag">#</span>${item.id}</span>
@@ -104,10 +144,10 @@ class User {
     users.forEach((item) => {
       if (item.id === this.idItem) {
         this.userList.innerHTML = `
-            <div href="index.html" class="content-user__back">
+            <a href="index.html" class="content-user__back">
                 <img src="./assets/icon-arrow-left.svg" alt="" />
                 <span>Go back</span>
-            </div>
+            </a>
             <div class="content-user__gestion">
                 <div class="content-user__gestion-status">
                     <span class="status">Status</span>
@@ -139,17 +179,73 @@ class User {
                 <div class="content-user__information-main">
                     <div class="content-paymentDate">
                         <div class="invoice-d">
-                            <span class="title-d">Invoice date</span>
+                            <h3 class="title-d">Invoice date</h3>
                             <span class="date-d">${this.dateGestion(
                               item.createdAt
                             )}</span>
                         </div>
                         <div class="invoice-d">
-                        <span class="title-d">Payment Due</span>
-                        <span class="date-d">${this.dateGestion(
-                          item.paymentDue
-                        )}</span>
+                            <h3 class="title-d">Payment Due</h3>
+                            <span class="date-d">${this.dateGestion(
+                              item.paymentDue
+                            )}</span>
+                        </div>
                     </div>
+                    <div class="content-billTo">
+                        <h3 class="title-b">Bill To</h3>
+                        <span>${item.clientName}</span>
+                        <ul>
+                            <li>${item.clientAddress.street}</li>
+                            <li>${item.clientAddress.city}</li>
+                            <li>${item.clientAddress.postCode}</li>
+                            <li>${item.clientAddress.country}</li>
+                        </ul>
+                    </div>
+                    <div class="content-sentTo">
+                        <h3>Sent to</h3>
+                        <span>${item.clientEmail}</span>
+                    </div>
+                </div>
+                <div class="content-user__information-product">
+                    <div class="product-list">
+                        <div class="item-name">
+                            <h3>Item Name</h3>
+                            <ul>
+                                ${item.items
+                                  .map((a) => `<li>${a.name}</li>`)
+                                  .join("")}
+                            </ul>
+                        </div>
+                        <div class="item-qty">
+                            <h3>QTY.</h3>
+                            <ul>
+                                ${item.items
+                                  .map((a) => `<li>${a.quantity}</li>`)
+                                  .join("")}
+                            </ul>
+                        </div>
+                        <div class="item-price">
+                            <h3>Price</h3>
+                            <ul>
+                                ${item.items
+                                  .map(
+                                    (a) => `<li>£ ${a.price.toFixed(2)}</li>`
+                                  )
+                                  .join("")}
+                            </ul>
+                        </div>
+                        <div class="item-total">
+                            <h3>Total</h3>
+                            <ul>
+                            ${item.items
+                              .map((a) => `<li>£ ${a.total.toFixed(2)}</li>`)
+                              .join("")}
+                        </ul>
+                        </div>
+                    </div>
+                    <div class="product-total">
+                        <h4>Amount Due</h4>
+                        <span>£ ${item.total.toFixed(2)}</span>
                     </div>
                 </div>
             </div>
@@ -157,6 +253,8 @@ class User {
       }
     });
   }
+
+  //EDIT / DELETE / MARK AS PAID / ADD
 }
 
 const user = new User();
