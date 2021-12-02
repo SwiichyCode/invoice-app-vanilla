@@ -1,0 +1,120 @@
+.mainC-invoice {
+  display: flex;
+  position: absolute;
+  left: -5000px;
+  width: 100%;
+  height: 100%;
+  transition: all 1200ms ease-in-out;
+  z-index: 15;
+
+  &__content {
+    width: 100%;
+    max-width: 719px;
+    height: 100%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding-left: 159px;
+    background: var(--m);
+    z-index: 20;
+
+    &-title {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 32px;
+      letter-spacing: -0.5px;
+      text-transform: capitalize;
+      padding-top: 56px;
+      padding-bottom: 48px;
+      color: var(--h);
+    }
+
+    h4 {
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: -0.25px;
+      color: var(--a);
+      text-transform: capitalize;
+    }
+
+    &-billf {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 504px;
+      gap: 24px 0;
+      padding-bottom: 48px;
+
+      .address {
+        display: flex;
+        flex-direction: column;
+        gap: 24px 0;
+      }
+
+      .street-address {
+        #streetAddress {
+          width: 100%;
+        }
+      }
+
+      .street-addressT {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        input {
+          width: 100%;
+          max-width: 152px;
+        }
+      }
+    }
+
+    &-billt {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 504px;
+      gap: 24px 0;
+
+      .clientInformation {
+        display: flex;
+        flex-direction: column;
+
+        &-content {
+          display: flex;
+          flex-direction: column;
+          gap: 24px 0;
+          padding-bottom: 48px;
+
+          input {
+            width: 100%;
+          }
+        }
+      }
+
+      .street-addressC {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        input {
+          width: 100%;
+          max-width: 152px;
+        }
+      }
+    }
+  }
+
+  &__filter {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: var(--c);
+    opacity: 0.6;
+    z-index: 30;
+  }
+}
+
+.main-invoiceActive {
+  left: 0px;
+}

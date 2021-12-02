@@ -1,0 +1,88 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 103px;
+  height: 100%;
+  background: var(--o);
+  border-radius: 0px 20px 20px 0px;
+  z-index: 30;
+
+  &-logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    max-width: 103px;
+    height: 103px;
+    background: var(--a);
+    border-radius: 0px 20px 20px 0px;
+    z-index: 10;
+
+    &__patern {
+      position: absolute;
+      width: 103px;
+      height: 103px;
+      top: 50%;
+      border-radius: 0px 20px 20px 0px;
+      z-index: 10;
+      background: var(--b);
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+
+    img {
+      position: relative;
+      width: 40px;
+      height: 37.1px;
+      z-index: 20;
+    }
+  }
+
+  &-object {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 103px;
+    position: absolute;
+    bottom: 0;
+
+    &__theme {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 84.3px;
+      background: transparent;
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    &__line {
+      width: 100%;
+      height: 1px;
+      background: var(--p);
+    }
+
+    &__profil {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 88px;
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+    }
+  }
+}

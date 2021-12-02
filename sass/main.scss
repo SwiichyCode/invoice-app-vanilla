@@ -1,0 +1,40 @@
+//BASE
+@import "./base/reset";
+@import "./base/typography";
+
+//COMPONENTS
+@import "./components/buttons";
+@import "./components/input";
+
+//LAYOUT
+@import "./layout/navigation";
+@import "./layout/mainC";
+@import "./layout/header";
+@import "./layout/list";
+@import "./layout/cInvoice";
+@import "./layout/user";
+
+//PAGES
+@import "./pages/home";
+
+//THEMES
+@import "./themes/theme";
+
+//UTILITIES
+@import "./utilities/functions";
+@import "./utilities/mixins";
+@import "./utilities/variables";
+
+body {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  font-family: "Spartan", sans-serif;
+}
+
+.container {
+  margin: auto;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+}

@@ -1,0 +1,185 @@
+@import "../utilities/mixins";
+
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 5em;
+}
+
+button {
+  font-family: "Spartan", sans-serif;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+
+.btn-default1,
+.btn-default2,
+.btn-default3,
+.btn-default4,
+.btn-default5,
+.btn-default6 {
+  @include btn-patern;
+}
+
+//Button1 - Default
+/* 
+HTML =>
+<button class="btn-default">
+    <div class="btn-default__plus">
+        <img src="./assets/icon-plus.svg" />
+    </div>
+    <span>New Invoice</span>
+</button>
+*/
+.btn-default1 {
+  justify-content: space-between;
+  max-width: 150px;
+  color: var(--m);
+  background: var(--a);
+  &:hover {
+    background: var(--b);
+  }
+  &__plus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: var(--m);
+    border-radius: 50%;
+    margin-left: 8px;
+  }
+  span {
+    padding-right: 15px;
+  }
+}
+
+//Button2 - Default
+//HTML =>
+/*
+<button class="btn-defaultS">
+    <span>Mark as Paid</span>
+</button>
+*/
+.btn-default2 {
+  max-width: 131px;
+  color: var(--m);
+  background: var(--a);
+  &:hover {
+    background: var(--b);
+  }
+}
+
+//Button3 - Default
+//HTML =>
+/*
+<button class="btn-default3">
+    <span>Edit</span>
+</button>
+*/
+.btn-default3 {
+  max-width: 73px;
+  color: var(--g); //LightMode
+  //color: var(--e); DarkMode
+  background: var(--n); //LightMode
+  //background: var(--d); DarkMode
+  &:hover {
+    color: var(--g); //LightMode
+    //color: var(--e); DarkMode
+    background: var(--e);
+    //background: var(--m); DarkMode
+  }
+}
+
+//Button4 - Default
+//HTML =>
+/* 
+<button class="btn-default4">
+    <span>Save as Draft</span>
+</button>
+*/
+.btn-default4 {
+  max-width: 133px;
+  color: var(--f);
+  //color: var(--e) DarkMode
+  background: var(--o);
+  //background: var(--0);
+
+  &:hover {
+    color: var(--f);
+    //color: var(--e) DarkMode
+    background: var(--h);
+    //background: var(--c) DarkMode
+  }
+}
+
+//Button5 - Default
+//HTML =>
+/*
+<button class="btn-default5">
+    <span>Delete</span>
+</button>
+*/
+.btn-default5 {
+  max-width: 89px;
+  color: var(--m);
+  background: var(--i);
+
+  &:hover {
+    color: var(--m);
+    background: var(--j);
+  }
+}
+
+//Button6 - Default
+//HTML =>
+/* 
+<button class="btn-default6">
+    <span>+ Add New Item</span>
+</button>
+*/
+.btn-default6 {
+  max-width: 350px;
+  color: var(--g);
+  background: var(--n);
+
+  &:hover {
+    color: var(--g);
+    background: var(--e);
+  }
+}
+
+//button-container =>
+/*
+<div class="button-container">
+        <!--btn-default1-->
+        <button class="btn-default1">
+          <div class="btn-default1__plus">
+            <img src="./assets/icon-plus.svg" />
+          </div>
+          <span>New Invoice</span>
+        </button>
+        <!--btn-default2-->
+        <button class="btn-default2">
+          <span>Mark as Paid</span>
+        </button>
+        <!--btn-default3-->
+        <button class="btn-default3">
+          <span>Edit</span>
+        </button>
+        <!--btn-default4-->
+        <button class="btn-default4">
+          <span>Save as Draft</span>
+        </button>
+        <!--btn-default5-->
+        <button class="btn-default5">
+          <span>Delete</span>
+        </button>
+        <!--btn-default6-->
+        <button class="btn-default6">
+          <span>+ Add New Item</span>
+        </button>
+      </div>
+*/

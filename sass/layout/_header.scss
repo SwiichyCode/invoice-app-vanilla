@@ -1,0 +1,127 @@
+.mainC-header {
+  width: 100%;
+  max-width: 730px;
+  height: 59px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  margin-top: 72px;
+  user-select: none;
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      color: var(--h);
+      padding-bottom: 8px;
+    }
+
+    span {
+      color: var(--f);
+    }
+  }
+
+  &__toggle {
+    width: 100%;
+    max-width: 308px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-filter {
+      width: 118px;
+      height: 15px;
+      display: flex;
+
+      span {
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: -0.25px;
+        color: var(--h);
+      }
+
+      .toggle-filter {
+        position: relative;
+        width: 118px;
+        height: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .toggle-radio {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        top: 32px;
+        left: -38px;
+        position: absolute;
+        width: 192px;
+        height: 128px;
+        background: var(--m);
+        border-radius: 8px;
+        box-shadow: 0px 10px 20px rgba(72, 84, 159, 0.25);
+        z-index: 30;
+
+        label {
+          display: flex;
+          align-items: center;
+          font-weight: bold;
+          font-size: 12px;
+          line-height: 15px;
+          letter-spacing: -0.25px;
+          text-transform: capitalize;
+          color: var(--h);
+          padding: 0;
+          cursor: pointer;
+        }
+
+        label:nth-child(2) {
+          margin: 16px 0;
+        }
+
+        label:hover input[type="checkbox"] {
+          border: 1px solid #7c5dfa;
+        }
+
+        input[type="checkbox"] {
+          margin-left: 24px;
+          margin-right: 13px;
+          cursor: pointer;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          -ms-appearance: none;
+          border-radius: 2px;
+          width: 16px;
+          height: 16px;
+          background: #dfe3fa;
+          box-sizing: border-box;
+        }
+
+        input[type="checkbox"]:checked {
+          position: relative;
+          background: #7c5dfa;
+          &::before {
+            font-family: FontAwesome;
+            content: "\f00c";
+            display: block;
+            color: white;
+            font-size: 9px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+
+      .toggle-arrow {
+        transition: all ease-in-out 400ms;
+      }
+    }
+  }
+}

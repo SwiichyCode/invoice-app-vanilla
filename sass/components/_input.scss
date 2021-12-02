@@ -1,0 +1,175 @@
+//Form Elements Light
+.input-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 5em;
+}
+
+input,
+label {
+  font-family: "Spartan", sans-serif;
+  box-sizing: border-box;
+}
+
+label {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: var(--g);
+  padding-bottom: 10px;
+}
+
+.input-content {
+  display: flex;
+  flex-direction: column;
+}
+
+//Text-Field-Default
+//HTML =>
+/*
+<div class="textFieldDefault input-content">
+    <label for="textFieldDefault">Street Address</label>
+    <input type="text" id="textFieldDefault" name="textFieldDefault" />
+</div>
+*/
+.textFieldDefault {
+  input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 47px;
+    width: 239px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: -0.25px;
+    border-radius: 4px;
+    border: 1px solid var(--e);
+    caret-color: var(--a);
+    color: var(--h);
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+    padding-left: 20px;
+
+    &:focus {
+      outline: none;
+      border: 1px solid var(--b);
+    }
+  }
+}
+
+//Dropdown-Default
+//HTML
+/*
+<form type="submit">
+    <label for="dropdownDefault">Payment Terms</label>
+    <select id="dropdownDefault" name="dropdownDefault">
+        <option value="1d">Net 1 Day</option>
+        <option value="7d">Net 7 Days</option>
+        <option value="14d">Net 14 Days</option>
+        <option value="30d">Net 30 Days</option>
+    </select>
+</form>
+*/
+.dropdownDefault {
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  select {
+    width: 239px;
+    height: 48px;
+  }
+}
+
+//Date-Picker
+//HTML
+/*
+<div class="datePicker">
+  <div class="selected-date"></div>
+  <div class="dates">
+    <div class="month">
+      <div class="arrows prev-mth">&lt;</div>
+      <div class="mth"></div>
+      <div class="arrown next-mth">&gt;</div>
+    </div>
+
+    <div class="days"></div>
+  </div>
+</div>
+*/
+.datePicker {
+  width: 100%;
+  max-width: 240px;
+  display: flex;
+  flex-direction: column;
+
+  .title-date {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: -0.25px;
+    color: var(--g);
+    padding-bottom: 10px;
+  }
+  .selected-date {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: -0.25px;
+    color: var(--h);
+    box-sizing: border-box;
+    border: 1px solid var(--e);
+    border-radius: 4px;
+    background: var(--m);
+    padding: 0 20px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 200ms ease-in-out;
+    margin-bottom: 24px;
+
+    &:hover {
+      border: 1px solid var(--b);
+    }
+  }
+}
+
+.dates {
+  display: none;
+  width: 100%;
+  max-width: 240px;
+  height: 243px;
+  background: var(--m);
+  box-shadow: 0px 10px 20px rgba(72, 84, 159, 0.25);
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: var(--h);
+
+  .month {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 15px;
+    padding: 25px 23px 32px 24px;
+
+    img {
+      cursor: pointer;
+    }
+  }
+}
+
+.datePicker .dates.active {
+  display: flex;
+}

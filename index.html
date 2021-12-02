@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/99952062c2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer type="module" src="/src/index.js"></script>
+
+    <title>Frontend Mentor | Invoice app</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav">
+        <div class="nav-logo">
+          <img src="./assets/logo.svg" alt="logo" />
+          <div class="nav-logo__patern"></div>
+        </div>
+        <div class="nav-object">
+          <div class="nav-object__theme">
+            <img src="./assets/icon-moon.svg" />
+          </div>
+          <div class="nav-object__line"></div>
+          <div class="nav-object__profil">
+            <img src="./assets/image-avatar.jpg" alt="avatar" />
+          </div>
+        </div>
+      </div>
+      <div class="mainC">
+        <!--HEADER-->
+        <div class="mainC-header">
+          <div class="mainC-header__title">
+            <h1>Invoices</h1>
+            <span class="firstBody"
+              >There are <span id="totalItem">7</span> total invoices</span
+            >
+          </div>
+          <div class="mainC-header__toggle">
+            <div class="mainC-header__toggle-filter">
+              <div class="toggle-filter">
+                <span class="">Filter by status</span>
+                <img class="toggle-arrow" src="./assets/icon-arrow-down.svg" />
+                <div class="toggle-radio filter">
+                  <div>
+                    <label
+                      ><input
+                        type="checkbox"
+                        name="filter"
+                        value=".draft"
+                      />draft</label
+                    >
+                  </div>
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="filter"
+                      value=".pending"
+                    />pending</label
+                  >
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="filter"
+                      value=".paid"
+                    />paid</label
+                  >
+                </div>
+              </div>
+            </div>
+            <button id="invoice-btn" class="btn-default1">
+              <div class="btn-default1__plus">
+                <img src="./assets/icon-plus.svg" />
+              </div>
+              <span>New Invoice</span>
+            </button>
+          </div>
+        </div>
+        <!--LIST-->
+        <div class="mainC-list">
+          <ul class="content-list"></ul>
+        </div>
+        <!--INVOICE-->
+        <div class="mainC-invoice">
+          <div class="mainC-invoice__content">
+            <div class="mainC-invoice__content-title">
+              <span>new invoice</span>
+            </div>
+            <div class="mainC-invoice__content-billf">
+              <h4>bill from</h4>
+              <div class="address">
+                <div class="street-address">
+                  <div class="textFieldDefault input-content">
+                    <label for="textFieldDefault">Street Address</label>
+                    <input
+                      type="text"
+                      id="streetAddress"
+                      name="textFieldDefault"
+                    />
+                  </div>
+                </div>
+                <div class="street-addressT">
+                  <div class="textFieldDefault input-content">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" />
+                  </div>
+                  <div class="textFieldDefault input-content">
+                    <label for="postCode">Post Code</label>
+                    <input type="text" id="postCode" name="postCode" />
+                  </div>
+                  <div class="textFieldDefault input-content">
+                    <label for="country">Country</label>
+                    <input type="text" id="country" name="country" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mainC-invoice__content-billt">
+              <h4>bill to</h4>
+              <div class="clientInformation">
+                <div class="clientInformation-content">
+                  <div class="textFieldDefault input-content">
+                    <label for="cName">Client's Name</label>
+                    <input type="text" id="cName" name="cName" />
+                  </div>
+                  <div class="textFieldDefault input-content cEmail">
+                    <label for="cEmail">Client's Email</label>
+                    <input type="text" id="cEmail" name="cEmail" />
+                  </div>
+                  <div class="textFieldDefault input-content">
+                    <label for="cStreetAddress">Street Address</label>
+                    <input
+                      type="text"
+                      id="cStreetAddress"
+                      name="cStreetAddress"
+                    />
+                  </div>
+                  <div class="street-addressC">
+                    <div class="textFieldDefault input-content">
+                      <label for="cCity">City</label>
+                      <input type="text" id="cCity" name="cCity" />
+                    </div>
+                    <div class="textFieldDefault input-content">
+                      <label for="cPostCode">Post Code</label>
+                      <input type="text" id="cPostCode" name="cPostCode" />
+                    </div>
+                    <div class="textFieldDefault input-content">
+                      <label for="cCountry">Country</label>
+                      <input type="text" id="cCountry" name="cCountry" />
+                    </div>
+                  </div>
+                </div>
+                <div class="datePicker">
+                  <span class="title-date">Issue date</span>
+                  <div class="selected-date">
+                    <span id="selectedDate">21 Aug 2021</span>
+                    <img src="./assets/icon-calendar.svg" alt="" />
+                  </div>
+                  <div class="dates">
+                    <div class="month">
+                      <div class="arrows prev-mth">
+                        <img src="./assets/icon-arrow-left.svg" alt="" />
+                      </div>
+                      <div class="mth">Janvier</div>
+                      <div class="arrown next-mth">
+                        <img src="./assets/icon-arrow-right.svg" alt="" />
+                      </div>
+                    </div>
+                    <div class="days"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mainC-invoice__filter" onclick="removeInvoice()"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1188 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: -1px;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 22px;
+  letter-spacing: -0.63px;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.8;
+}
+
+.firstBody {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+}
+
+.secondBody {
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 18px;
+  letter-spacing: -0.23;
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 5em;
+}
+
+button {
+  font-family: "Spartan", sans-serif;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+
+.btn-default1,
+.btn-default2,
+.btn-default3,
+.btn-default4,
+.btn-default5,
+.btn-default6 {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  border-radius: 24px;
+  transition: all 200ms ease-in-out;
+}
+
+/* 
+HTML =>
+<button class="btn-default">
+    <div class="btn-default__plus">
+        <img src="./assets/icon-plus.svg" />
+    </div>
+    <span>New Invoice</span>
+</button>
+*/
+.btn-default1 {
+  justify-content: space-between;
+  max-width: 150px;
+  color: var(--m);
+  background: var(--a);
+}
+.btn-default1:hover {
+  background: var(--b);
+}
+.btn-default1__plus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--m);
+  border-radius: 50%;
+  margin-left: 8px;
+}
+.btn-default1 span {
+  padding-right: 15px;
+}
+
+/*
+<button class="btn-defaultS">
+    <span>Mark as Paid</span>
+</button>
+*/
+.btn-default2 {
+  max-width: 131px;
+  color: var(--m);
+  background: var(--a);
+}
+.btn-default2:hover {
+  background: var(--b);
+}
+
+/*
+<button class="btn-default3">
+    <span>Edit</span>
+</button>
+*/
+.btn-default3 {
+  max-width: 73px;
+  color: var(--g);
+  background: var(--n);
+}
+.btn-default3:hover {
+  color: var(--g);
+  background: var(--e);
+}
+
+/* 
+<button class="btn-default4">
+    <span>Save as Draft</span>
+</button>
+*/
+.btn-default4 {
+  max-width: 133px;
+  color: var(--f);
+  background: var(--o);
+}
+.btn-default4:hover {
+  color: var(--f);
+  background: var(--h);
+}
+
+/*
+<button class="btn-default5">
+    <span>Delete</span>
+</button>
+*/
+.btn-default5 {
+  max-width: 89px;
+  color: var(--m);
+  background: var(--i);
+}
+.btn-default5:hover {
+  color: var(--m);
+  background: var(--j);
+}
+
+/* 
+<button class="btn-default6">
+    <span>+ Add New Item</span>
+</button>
+*/
+.btn-default6 {
+  max-width: 350px;
+  color: var(--g);
+  background: var(--n);
+}
+.btn-default6:hover {
+  color: var(--g);
+  background: var(--e);
+}
+
+/*
+<div class="button-container">
+        <!--btn-default1-->
+        <button class="btn-default1">
+          <div class="btn-default1__plus">
+            <img src="./assets/icon-plus.svg" />
+          </div>
+          <span>New Invoice</span>
+        </button>
+        <!--btn-default2-->
+        <button class="btn-default2">
+          <span>Mark as Paid</span>
+        </button>
+        <!--btn-default3-->
+        <button class="btn-default3">
+          <span>Edit</span>
+        </button>
+        <!--btn-default4-->
+        <button class="btn-default4">
+          <span>Save as Draft</span>
+        </button>
+        <!--btn-default5-->
+        <button class="btn-default5">
+          <span>Delete</span>
+        </button>
+        <!--btn-default6-->
+        <button class="btn-default6">
+          <span>+ Add New Item</span>
+        </button>
+      </div>
+*/
+.input-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 5em;
+}
+
+input,
+label {
+  font-family: "Spartan", sans-serif;
+  box-sizing: border-box;
+}
+
+label {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: var(--g);
+  padding-bottom: 10px;
+}
+
+.input-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+<div class="textFieldDefault input-content">
+    <label for="textFieldDefault">Street Address</label>
+    <input type="text" id="textFieldDefault" name="textFieldDefault" />
+</div>
+*/
+.textFieldDefault input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 47px;
+  width: 239px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  border-radius: 4px;
+  border: 1px solid var(--e);
+  caret-color: var(--a);
+  color: var(--h);
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+  padding-left: 20px;
+}
+.textFieldDefault input:focus {
+  outline: none;
+  border: 1px solid var(--b);
+}
+
+/*
+<form type="submit">
+    <label for="dropdownDefault">Payment Terms</label>
+    <select id="dropdownDefault" name="dropdownDefault">
+        <option value="1d">Net 1 Day</option>
+        <option value="7d">Net 7 Days</option>
+        <option value="14d">Net 14 Days</option>
+        <option value="30d">Net 30 Days</option>
+    </select>
+</form>
+*/
+.dropdownDefault form {
+  display: flex;
+  flex-direction: column;
+}
+.dropdownDefault select {
+  width: 239px;
+  height: 48px;
+}
+
+/*
+<div class="datePicker">
+  <div class="selected-date"></div>
+  <div class="dates">
+    <div class="month">
+      <div class="arrows prev-mth">&lt;</div>
+      <div class="mth"></div>
+      <div class="arrown next-mth">&gt;</div>
+    </div>
+
+    <div class="days"></div>
+  </div>
+</div>
+*/
+.datePicker {
+  width: 100%;
+  max-width: 240px;
+  display: flex;
+  flex-direction: column;
+}
+.datePicker .title-date {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: var(--g);
+  padding-bottom: 10px;
+}
+.datePicker .selected-date {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: var(--h);
+  box-sizing: border-box;
+  border: 1px solid var(--e);
+  border-radius: 4px;
+  background: var(--m);
+  padding: 0 20px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 200ms ease-in-out;
+  margin-bottom: 24px;
+}
+.datePicker .selected-date:hover {
+  border: 1px solid var(--b);
+}
+
+.dates {
+  display: none;
+  width: 100%;
+  max-width: 240px;
+  height: 243px;
+  background: var(--m);
+  box-shadow: 0px 10px 20px rgba(72, 84, 159, 0.25);
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: var(--h);
+}
+.dates .month {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 15px;
+  padding: 25px 23px 32px 24px;
+}
+.dates .month img {
+  cursor: pointer;
+}
+
+.datePicker .dates.active {
+  display: flex;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 103px;
+  height: 100%;
+  background: var(--o);
+  border-radius: 0px 20px 20px 0px;
+  z-index: 30;
+}
+.nav-logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  max-width: 103px;
+  height: 103px;
+  background: var(--a);
+  border-radius: 0px 20px 20px 0px;
+  z-index: 10;
+}
+.nav-logo__patern {
+  position: absolute;
+  width: 103px;
+  height: 103px;
+  top: 50%;
+  border-radius: 0px 20px 20px 0px;
+  z-index: 10;
+  background: var(--b);
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+.nav-logo img {
+  position: relative;
+  width: 40px;
+  height: 37.1px;
+  z-index: 20;
+}
+.nav-object {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 103px;
+  position: absolute;
+  bottom: 0;
+}
+.nav-object__theme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 84.3px;
+  background: transparent;
+}
+.nav-object__theme img {
+  width: 20px;
+  height: 20px;
+}
+.nav-object__line {
+  width: 100%;
+  height: 1px;
+  background: var(--p);
+}
+.nav-object__profil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 88px;
+}
+.nav-object__profil img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.mainC {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: var(--q);
+}
+
+.mainC-header {
+  width: 100%;
+  max-width: 730px;
+  height: 59px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  margin-top: 72px;
+  user-select: none;
+}
+.mainC-header__title {
+  display: flex;
+  flex-direction: column;
+}
+.mainC-header__title h1 {
+  color: var(--h);
+  padding-bottom: 8px;
+}
+.mainC-header__title span {
+  color: var(--f);
+}
+.mainC-header__toggle {
+  width: 100%;
+  max-width: 308px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mainC-header__toggle-filter {
+  width: 118px;
+  height: 15px;
+  display: flex;
+}
+.mainC-header__toggle-filter span {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: var(--h);
+}
+.mainC-header__toggle-filter .toggle-filter {
+  position: relative;
+  width: 118px;
+  height: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.mainC-header__toggle-filter .toggle-radio {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  top: 32px;
+  left: -38px;
+  position: absolute;
+  width: 192px;
+  height: 128px;
+  background: var(--m);
+  border-radius: 8px;
+  box-shadow: 0px 10px 20px rgba(72, 84, 159, 0.25);
+  z-index: 30;
+}
+.mainC-header__toggle-filter .toggle-radio label {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  text-transform: capitalize;
+  color: var(--h);
+  padding: 0;
+  cursor: pointer;
+}
+.mainC-header__toggle-filter .toggle-radio label:nth-child(2) {
+  margin: 16px 0;
+}
+.mainC-header__toggle-filter .toggle-radio label:hover input[type=checkbox] {
+  border: 1px solid #7c5dfa;
+}
+.mainC-header__toggle-filter .toggle-radio input[type=checkbox] {
+  margin-left: 24px;
+  margin-right: 13px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  border-radius: 2px;
+  width: 16px;
+  height: 16px;
+  background: #dfe3fa;
+  box-sizing: border-box;
+}
+.mainC-header__toggle-filter .toggle-radio input[type=checkbox]:checked {
+  position: relative;
+  background: #7c5dfa;
+}
+.mainC-header__toggle-filter .toggle-radio input[type=checkbox]:checked::before {
+  font-family: FontAwesome;
+  content: "\f00c";
+  display: block;
+  color: white;
+  font-size: 9px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.mainC-header__toggle-filter .toggle-arrow {
+  transition: all ease-in-out 400ms;
+}
+
+.mainC-list {
+  width: 100%;
+  max-width: 730px;
+  margin-top: 61px;
+}
+
+.content-list {
+  display: flex;
+  flex-direction: column;
+}
+.content-list__item {
+  width: 100%;
+  max-width: 730px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  background: var(--m);
+  border-radius: 8px;
+  box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+  box-sizing: border-box;
+  margin: 8px 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+.content-list__item:hover {
+  border: 1px solid #7c5dfa;
+}
+.content-list__item #data-Ref {
+  min-width: 58px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: var(--h);
+  padding-left: 32px;
+  padding-right: 43px;
+}
+.content-list__item #data-Ref .hashtag {
+  color: var(--g);
+}
+.content-list__item #data-Date {
+  min-width: 102px;
+  padding-right: 6.2%;
+}
+.content-list__item #data-Name {
+  width: 100%;
+  max-width: 108px;
+}
+.content-list__item #data-Date,
+.content-list__item #data-Name {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: var(--f);
+}
+.content-list__item #data-Total {
+  width: 150px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.8px;
+  text-align: right;
+  color: var(--h);
+  margin-right: 40px;
+}
+.content-list__item img {
+  padding-right: 32px;
+}
+
+.nothingList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 141px;
+}
+.nothingList img {
+  width: 100%;
+  max-width: 241px;
+  height: 200px;
+  padding-bottom: 64px;
+}
+.nothingList h2 {
+  padding-bottom: 24px;
+  color: var(--h);
+}
+.nothingList p {
+  max-width: 220px;
+  text-align: center;
+  color: var(--f);
+}
+.nothingList p span {
+  font-weight: bold;
+}
+
+.data-Status {
+  position: relative;
+  width: 100%;
+  max-width: 104px;
+  height: 40px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  text-transform: capitalize;
+  text-align: center;
+  border-radius: 6px;
+  margin-right: 20px;
+}
+.data-Status .content-dot {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.paid .data-Status {
+  position: relative;
+  color: var(--r);
+  background: #f3fcf9;
+}
+.paid .data-Status .content-dot {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.paid .data-Status .content-dot span {
+  width: 8px;
+  height: 8px;
+  background: var(--r);
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.pending .data-Status {
+  position: relative;
+  color: var(--s);
+  background: #fff8f0;
+}
+.pending .data-Status .content-dot {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.pending .data-Status .content-dot span {
+  width: 8px;
+  height: 8px;
+  background: var(--s);
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.draft .data-Status {
+  position: relative;
+  color: var(--o);
+  background: #f3f3f5;
+}
+.draft .data-Status .content-dot {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.draft .data-Status .content-dot span {
+  width: 8px;
+  height: 8px;
+  background: var(--o);
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.mainC-invoice {
+  display: flex;
+  position: absolute;
+  left: -5000px;
+  width: 100%;
+  height: 100%;
+  transition: all 1200ms ease-in-out;
+  z-index: 15;
+}
+.mainC-invoice__content {
+  width: 100%;
+  max-width: 719px;
+  height: 100%;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding-left: 159px;
+  background: var(--m);
+  z-index: 20;
+}
+.mainC-invoice__content-title {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.5px;
+  text-transform: capitalize;
+  padding-top: 56px;
+  padding-bottom: 48px;
+  color: var(--h);
+}
+.mainC-invoice__content h4 {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: var(--a);
+  text-transform: capitalize;
+}
+.mainC-invoice__content-billf {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 504px;
+  gap: 24px 0;
+  padding-bottom: 48px;
+}
+.mainC-invoice__content-billf .address {
+  display: flex;
+  flex-direction: column;
+  gap: 24px 0;
+}
+.mainC-invoice__content-billf .street-address #streetAddress {
+  width: 100%;
+}
+.mainC-invoice__content-billf .street-addressT {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.mainC-invoice__content-billf .street-addressT input {
+  width: 100%;
+  max-width: 152px;
+}
+.mainC-invoice__content-billt {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 504px;
+  gap: 24px 0;
+}
+.mainC-invoice__content-billt .clientInformation {
+  display: flex;
+  flex-direction: column;
+}
+.mainC-invoice__content-billt .clientInformation-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px 0;
+  padding-bottom: 48px;
+}
+.mainC-invoice__content-billt .clientInformation-content input {
+  width: 100%;
+}
+.mainC-invoice__content-billt .street-addressC {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.mainC-invoice__content-billt .street-addressC input {
+  width: 100%;
+  max-width: 152px;
+}
+.mainC-invoice__filter {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--c);
+  opacity: 0.6;
+  z-index: 30;
+}
+
+.main-invoiceActive {
+  left: 0px;
+}
+
+.mainU {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: var(--q);
+}
+
+.content-user {
+  width: 100%;
+  max-width: 730px;
+}
+.content-user__back {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding-bottom: 32px;
+}
+.content-user__back img {
+  padding-right: 23px;
+}
+.content-user__back span {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  color: var(--h);
+}
+.content-user__gestion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 88px;
+  padding-left: 32px;
+  background: var(--m);
+  box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+.content-user__gestion-status {
+  display: flex;
+  align-items: center;
+}
+.content-user__gestion-status .status {
+  padding-right: 16px;
+  color: var(--t);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+}
+.content-user__gestion-btn {
+  width: 100%;
+  max-width: 309px;
+  display: flex;
+  padding-right: 32px;
+  gap: 0px 8px;
+}
+.content-user__gestion-btn button {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-weight: bold;
+  border-radius: 24px;
+}
+.content-user__gestion-btn .edit {
+  max-width: 73px;
+  background: var(--n);
+  color: var(--g);
+}
+.content-user__gestion-btn .delete {
+  max-width: 89px;
+  height: 48px;
+  background: var(--i);
+  color: var(--m);
+}
+.content-user__gestion-btn .paid {
+  max-width: 131px;
+  height: 48px;
+  background: var(--a);
+  color: var(--m);
+}
+.content-user__information {
+  display: flex;
+  flex-direction: column;
+  background: var(--m);
+  border-radius: 8px;
+  box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+  padding: 48px;
+}
+.content-user__information-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 21px;
+}
+.content-user__information-header .content-id {
+  display: flex;
+  flex-direction: column;
+}
+.content-user__information-header .content-id .user-id {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.8px;
+  color: var(--h);
+}
+.content-user__information-header .content-id .user-id span {
+  color: var(--f);
+}
+.content-user__information-header .content-id .user-desc {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: var(--f);
+}
+.content-user__information-header .content-adress ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.content-user__information-header .content-adress ul li {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 18px;
+  letter-spacing: 0.22px;
+  color: var(--g);
+}
+.content-user__information-main {
+  display: flex;
+}
+.content-user__information-main .content-paymentDate {
+  display: flex;
+  flex-direction: column;
+  gap: 32px 0;
+}
+.content-user__information-main .invoice-d {
+  display: flex;
+  flex-direction: column;
+  gap: 12px 0;
+}
+.content-user__information-main .invoice-d .title-d {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: var(--g);
+}
+.content-user__information-main .invoice-d .date-d {
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.31px;
+  color: var(--h);
+}
+
+:root {
+  --a: #7c5dfa;
+  --b: #9277ff;
+  --c: #1e2139;
+  --d: #252945;
+  --e: #dfe3fa;
+  --f: #888eb0;
+  --g: #7e88c3;
+  --h: #0c0e16;
+  --i: #ec5757;
+  --j: #ff9797;
+  --k: #f8f8fb;
+  --l: #141625;
+  --m: #ffffff;
+  --n: #f9fafe;
+  --o: #373b53;
+  --p: #494e6e;
+  --q: #f2f2f2;
+  --r: #33d69f;
+  --s: #ff8f00;
+  --t: #858bb2;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  font-family: "Spartan", sans-serif;
+}
+
+.container {
+  margin: auto;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+}
+
+/*# sourceMappingURL=style.css.map */
